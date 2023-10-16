@@ -1,0 +1,32 @@
+.il-modal__cancel .il-modal__content{
+    position: relative;
+    padding: 10px;
+    max-width: 600px;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.cancel-btn-group{
+    display: none;
+    justify-content: center;
+}
+.cancel-btn-group.active{
+    display: flex;
+}
+.il-modal__cancel .reasons-wrap{
+    display: none;
+}
+.il-modal__cancel .reasons-wrap.active{
+    display: flex;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.il-modal__cancel .reasons-wrap select{
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 40px;
+}

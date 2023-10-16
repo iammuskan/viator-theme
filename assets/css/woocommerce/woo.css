@@ -1,0 +1,70 @@
+/* account page*/
+.woocommerce-account .entry-title {
+    font-size: 20px;
+}
+.woocommerce-account .entry-content {
+    margin-top: 15px;
+}
+.woocommerce-account .woocommerce-MyAccount-content input {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    height: 50px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #8b8b8b;
+    padding: 16px 10px 16px 25px;
+}
+
+/* checkout page */
+.woocommerce-checkout .entry-title{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.woocommerce-checkout .col2-set .col-12{
+    padding-left: 0;
+}
+.woocommerce-additional-fields .woocommerce-additional-fields__field-wrapper,
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper{
+    margin-top: 25px;
+}
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper h6{
+    margin-bottom: 10px;
+}
+.woocommerce-checkout .shop_table .product-total {
+    text-align: right;
+}
+.woocommerce-checkout .order-total td,
+.woocommerce-checkout .cart-subtotal td {
+    text-align: right;
+}
+.woocommerce-checkout form.checkout input:not([type="checkbox"]) {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    height: 50px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #8b8b8b;
+    padding: 16px 10px 16px 25px;
+    background-color: rgba(242, 242, 242, 0.1);
+    box-shadow: none;
+}
+.woocommerce-checkout .select2-container .select2-selection--single,
+.woocommerce-checkout form.checkout select {
+    height: 50px;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #8b8b8b;
+    background-color: #fff;
+}
+.form-row-wide.create-account{
+    padding-bottom: 20px;
+    margin-top: 5px;
+    border-bottom: 1px dashed #8b8b8b;
+}
+.form-row-wide.create-account label{
+    display: flex;
+    align-items: center;
+    border: 1px solid #8b8b8b;
+    padding: 0 10px;
+}
