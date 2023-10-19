@@ -10,7 +10,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: viator
 */
-.blocked-row {
+.rowed {
 display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
@@ -18,6 +18,33 @@ display: flex;
     
 }
 
+.banner-section .slick-slide {
+    display: block;
+    height: auto;
+   
+}
+.banner-slider {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.banner-slider .excursion__slider-second-new-class {
+    width: 395px;
+    height: 100%;
+}
+
+.banner-slider .excursion__slider-second-new-class img {
+    margin-bottom: 20px;
+}
+
+.ulelement{
+display:none;
+}
 .rounded_c img,
 .rounded_c .wp-block-cover__background {
     border-radius: 20px;
@@ -162,10 +189,161 @@ ul#suggestions {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 3px 0px;
     border-radius: 0px 0px 10px 10px;
 }
+
+/*****************18-10-2023******************/
+.banner-section .slider.slider-for {
+    max-width: 695px;
+    flex-basis: 100%;
+    max-height: 695px;
+    margin-bottom: 30px;
+}
+.slider-for .excursionslider-main-img {
+    height: 630px;
+}
+.slider-for .slick-current.slick-active img {
+    height: 100%;
+    object-fit:cover;
+}
+.excursion__slider-second-new-class .slick-prev{
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.966174 11.0935C0.966174 10.8541 1.05649 10.6145 1.23688 10.4318L10.476 1.07262C10.8371 0.706912 11.4217 0.706912 11.7825 1.07262C12.1432 1.43833 12.1435 2.03053 11.7825 2.39601L3.19651 11.0935L11.7825 19.791C12.1435 20.1567 12.1435 20.7489 11.7825 21.1144C11.4214 21.4799 10.8368 21.4801 10.476 21.1144L1.23688 11.7552C1.05649 11.5725 0.966174 11.3329 0.966174 11.0935Z' fill='%23C0C0C0'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+.excursion__slider-second-new-class .slick-next {
+    right: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0338 11.0935C12.0338 10.8541 11.9435 10.6145 11.7631 10.4318L2.52396 1.07262C2.16294 0.706912 1.57833 0.706912 1.21754 1.07262C0.856753 1.43833 0.856522 2.03053 1.21754 2.39601L9.80349 11.0935L1.21754 19.791C0.856523 20.1567 0.856523 20.7489 1.21754 21.1144C1.57856 21.4799 2.16317 21.4801 2.52396 21.1144L11.7631 11.7552C11.9435 11.5725 12.0338 11.3329 12.0338 11.0935Z' fill='%23C0C0C0'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+.excursion__slider-second-new-class .slick-arrow {
+    position: absolute;
+    bottom: -5px;
+    width: 40px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 34px;
+    color: silver;
+    text-align: center;
+    border: 1px solid silver;
+    background-color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+}
+.excursion__slider-arrows-new {
+    position: relative;
+    width: 100%;
+}
+
+.excursion__slider-second-new-class .slick-arrow {
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: 400;
+    transition: all .25s;
+}
+.excursion__slider-second-new-class .slick-next:hover {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0338 11.0935C12.0338 10.8541 11.9435 10.6145 11.7631 10.4318L2.52396 1.07262C2.16294 0.706912 1.57833 0.706912 1.21754 1.07262C0.856753 1.43833 0.856522 2.03053 1.21754 2.39601L9.80349 11.0935L1.21754 19.791C0.856523 20.1567 0.856523 20.7489 1.21754 21.1144C1.57856 21.4799 2.16317 21.4801 2.52396 21.1144L11.7631 11.7552C11.9435 11.5725 12.0338 11.3329 12.0338 11.0935Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+}
+.excursion__slider-second-new-class .slick-arrow:hover {
+    color: #fff;
+    background-color: #0c498a;
+    text-decoration: none;
+}
+.excursion__slider-second-new-class .slick-prev:hover {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.966174 11.0935C0.966174 10.8541 1.05649 10.6145 1.23688 10.4318L10.476 1.07262C10.8371 0.706912 11.4217 0.706912 11.7825 1.07262C12.1432 1.43833 12.1435 2.03053 11.7825 2.39601L3.19651 11.0935L11.7825 19.791C12.1435 20.1567 12.1435 20.7489 11.7825 21.1144C11.4214 21.4799 10.8368 21.4801 10.476 21.1144L1.23688 11.7552C1.05649 11.5725 0.966174 11.3329 0.966174 11.0935Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+}
+.hide-real {
+    display: none !important;
+}
+.banner-slider-first {
+    max-width: 695px;
+    flex-basis: 100%;
+    margin-bottom: 0px;
+}
+.excursion__aside.margin {
+    margin-top: -175px;
+}
+.hiddendata .excursion__title{
+display:none;
+}
+.hiddendata .excursion__info{
+display:none;
+}
+.banner-slider-first .excursion-green {
+    color: #318e51;
+}
+.banner-slider-first .excursion__info-wrap {
+    margin-bottom: 15px;
+}
+.excursion {
+    padding-top: 0px !important;
+}
+/**************close*********************/
+@media only screen and (max-width:1199px) {
+    .banner-slider-first {
+    max-width: 515px;
+}
+.banner-section .slider.slider-for.slick-initialized.slick-slider {
+	max-width: 515px;
+}
+}
 @media only screen and (max-width:991px) {
+.excursion__aside.margin {
+    margin-top: 0 !important;
+}
+    .banner-slider-first {
+    max-width: 100%;
+}
+    .banner-section .slider.slider-for.slick-initialized.slick-slider {
+	max-width: 100%;
+}
 ul#suggestions {
     top: 145px;
     width: 100%;
     margin: 0px;
+}
+.banner-slider .excursion__slider-second-new-class {
+    width: 100%;
+        margin-bottom: 30px;
+}
+.excursion__slider-second-new-class .excursionslider-main-img  {
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+}
+@media only screen and (max-width:990px) {
+     .slider-for .excursionslider-main-img {
+    height: 100% !important;  
+}   
+.slider-nav .excursionslider-main-img img{
+    height: 100px !important;
+    object-fit:cover;
+}  
+.banner-slider {
+    
+    padding-top: 0px;
+}
+}
+@media  screen and (max-width:767px) {
+ .excursion__slider-arrows-new {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+   .excursion__slider-second-new-class .slick-arrow{
+    position: static;
+    width: 48%;
+    height: 60px;
+    font-size: 18px;
+    line-height: 22px;
+    }
+}
+@media  screen and (max-width:576px) {
+    .banner-section .container {
+    padding: 0px !important;
+}
+.excursion__slider-second-new-class {
+    padding: 0px 15px;
 }
 }

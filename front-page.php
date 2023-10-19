@@ -25,6 +25,9 @@ if ( ! empty( $featured_product_id ) ) {
 }
 ?>
 
+
+
+
     <main class="main-wrapper">
         <div class="main-banner">
             <div class="main-banner__image">
@@ -186,494 +189,512 @@ if ( ! empty( $featured_product_id ) ) {
         <div class="block-popular">
             <div class="container">
                 <h2 class="block-popular__title"><?php echo carbon_get_theme_option( 'viator_home_featured_title_' . carbon_lang_prefix() ); ?></h2>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+              <div class="row-new">
+                       </div>
+<?php
+global $wpdb;
+$table_name = $wpdb->prefix . 'grids';
+global $wp;
+$current_page_urls = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$current_page_url = "https://staging.ilmioviaggio.com/";
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
 
-                                <div class="review skeleton-loader"></div>
+$matching_data = $wpdb->get_row("SELECT * FROM $table_name WHERE url = '$current_page_urls'", ARRAY_A);
 
-                                <p class="activities-item__text skeleton-loader">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+if ($matching_data) {
+    echo '<div class="rowed">';
+    echo $matching_data['html_content'];
+    echo '</div>';
+} else {
+   }
+ ?>
+<div class="row newrowclass" style='display:none;'>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
 
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
+                    <!--            <div class="review skeleton-loader"></div>-->
 
-                                <div class="review skeleton-loader"></div>
+                    <!--            <p class="activities-item__text skeleton-loader">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
-                                <p class="activities-item__text skeleton-loader">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
 
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
+                    <!--            <div class="review skeleton-loader"></div>-->
 
-                                <div class="review skeleton-loader"></div>
+                    <!--            <p class="activities-item__text skeleton-loader">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
-                                <p class="activities-item__text skeleton-loader">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
 
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
+                    <!--            <div class="review skeleton-loader"></div>-->
 
-                                <div class="review skeleton-loader"></div>
+                    <!--            <p class="activities-item__text skeleton-loader">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
-                                <p class="activities-item__text skeleton-loader">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
 
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
+                    <!--            <div class="review skeleton-loader"></div>-->
 
-                                <div class="review skeleton-loader"></div>
+                    <!--            <p class="activities-item__text skeleton-loader">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
-                                <p class="activities-item__text skeleton-loader">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
 
-                    <div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">
-                        <div class="activities-item">
-                            <div class="activities-item__image skeleton-loader"></div>
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
 
-                            <div class="activities-item__body">
-                                <div class="activities-item__title skeleton-loader"></div>
+                    <!--            <div class="review skeleton-loader"></div>-->
 
-                                <div class="review skeleton-loader"></div>
+                    <!--            <p class="activities-item__text skeleton-loader">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
-                                <p class="activities-item__text">
-                                    <svg
-                                            role="img"
-                                            width="320"
-                                            height="115"
-                                            aria-labelledby="loading-aria"
-                                            viewBox="0 50 476 124"
-                                            preserveAspectRatio="none"
-                                    >
-                                        <rect
-                                                x="0"
-                                                y="0"
-                                                width="100%"
-                                                height="100%"
-                                                clip-path="url(#clip-path)"
-                                                style='fill: url("#fill");'
-                                        ></rect>
-                                        <defs>
-                                            <clipPath id="clip-path">
-                                                <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />
-                                                <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />
-                                                <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />
-                                                <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />
-                                            </clipPath>
-                                            <linearGradient id="fill">
-                                                <stop
-                                                        offset="0.599964"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-2; -2; 1"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="1.59996"
-                                                        stop-color="#ecebeb"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="-1; -1; 2"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                                <stop
-                                                        offset="2.59996"
-                                                        stop-color="#dddbdd"
-                                                        stop-opacity="1"
-                                                >
-                                                    <animate
-                                                            attributeName="offset"
-                                                            values="0; 0; 3"
-                                                            keyTimes="0; 0.25; 1"
-                                                            dur="2s"
-                                                            repeatCount="indefinite"
-                                                    ></animate>
-                                                </stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 mb-md-5 mb-4 skeleton-init">-->
+                    <!--    <div class="activities-item">-->
+                    <!--        <div class="activities-item__image skeleton-loader"></div>-->
+
+                    <!--        <div class="activities-item__body">-->
+                    <!--            <div class="activities-item__title skeleton-loader"></div>-->
+
+                    <!--            <div class="review skeleton-loader"></div>-->
+
+                    <!--            <p class="activities-item__text">-->
+                    <!--                <svg-->
+                    <!--                        role="img"-->
+                    <!--                        width="320"-->
+                    <!--                        height="115"-->
+                    <!--                        aria-labelledby="loading-aria"-->
+                    <!--                        viewBox="0 50 476 124"-->
+                    <!--                        preserveAspectRatio="none"-->
+                    <!--                >-->
+                    <!--                    <rect-->
+                    <!--                            x="0"-->
+                    <!--                            y="0"-->
+                    <!--                            width="100%"-->
+                    <!--                            height="100%"-->
+                    <!--                            clip-path="url(#clip-path)"-->
+                    <!--                            style='fill: url("#fill");'-->
+                    <!--                    ></rect>-->
+                    <!--                    <defs>-->
+                    <!--                        <clipPath id="clip-path">-->
+                    <!--                            <rect x="0" y="56" rx="0" ry="0" width="476" height="16" />-->
+                    <!--                            <rect x="0" y="74" rx="0" ry="0" width="440" height="16" />-->
+                    <!--                            <rect x="0" y="92" rx="0" ry="0" width="208" height="16" />-->
+                    <!--                            <rect x="0" y="110" rx="0" ry="0" width="320" height="16" />-->
+                    <!--                        </clipPath>-->
+                    <!--                        <linearGradient id="fill">-->
+                    <!--                            <stop-->
+                    <!--                                    offset="0.599964"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-2; -2; 1"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="1.59996"-->
+                    <!--                                    stop-color="#ecebeb"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="-1; -1; 2"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                            <stop-->
+                    <!--                                    offset="2.59996"-->
+                    <!--                                    stop-color="#dddbdd"-->
+                    <!--                                    stop-opacity="1"-->
+                    <!--                            >-->
+                    <!--                                <animate-->
+                    <!--                                        attributeName="offset"-->
+                    <!--                                        values="0; 0; 3"-->
+                    <!--                                        keyTimes="0; 0.25; 1"-->
+                    <!--                                        dur="2s"-->
+                    <!--                                        repeatCount="indefinite"-->
+                    <!--                                ></animate>-->
+                    <!--                            </stop>-->
+                    <!--                        </linearGradient>-->
+                    <!--                    </defs>-->
+                    <!--                </svg>-->
+                    <!--            </p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
                 </div>
-
                 <div class="row justify-content-end">
                     <div class="col-lg-4 col-md-5 col-sm-6 mt-md-0 mt-1">
                         <a href="/<?php echo $lang;

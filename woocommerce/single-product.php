@@ -26,15 +26,51 @@ $path = get_template_directory_uri();
 
 ?>
 
-    <main class="main-wrapper">
+<?php
+global $wpdb;
+$table_name = $wpdb->prefix.'singletable';
+global $wp;
+$current_page_url = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$matching_data = $wpdb->get_row("SELECT * FROM $table_name WHERE url = '$current_page_url'", ARRAY_A);
 
+?>
+
+
+    <main class="main-wrapper">
+<?php  if ($matching_data) {
+    echo '<div class="banner-section">';
+    echo '<div class="container">';
+    echo '<div class="vehicle-detail-banner banner-content clearfix">';
+    echo '<div class="d-flex banner-slider">';
+
+    echo '<div class="slider slider-for first-slide">';
+    
+$cleaned_html = preg_replace('/[^a-zA-Z0-9\s<>"\'\/\.=,\-:]/', '', $matching_data['media']);
+    echo $cleaned_html;
+    echo '</div>';
+    echo '<div class="excursion__slider-second-new-class">';
+    echo '<div class="slider slider-nav thumb-image">';
+    echo $cleaned_html; 
+    echo '</div>';
+    echo '<div class="excursion__slider-arrows-new"></div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+}
+?>
         <div class="excursion">
+
             <div class="container">
 
-                <div class="d-flex excursion__wrap skeleton-init">
-                    <div class="d-flex excursion__slider">
-                        <div class="excursion__slider-main skeleton-loader"></div>
-                        <div class="excursion__slider-second skeleton-loader"></div>
+                <div class="d-flex excursion__wrap">
+ <div  class="d-flex excursion__slider">
+                                 <?php  if(!$matching_data) { ?>
+        <div class="excursion__slider-main skeleton-loader"></div>
+                        <div class="excursion__slider-second skeleton-loader"></div> 
+                                         <?php } ?>
+
                     </div>
 
                     <div class="excursion__content">
@@ -43,13 +79,22 @@ $path = get_template_directory_uri();
                             <div class="tags__item skeleton-loader"></div>
                             <div class="tags__item skeleton-loader"></div>
                         </div>
-
-                        <h2 class="excursion__title skeleton-loader"></h2>
+<?php if ($matching_data) {?>
+     <h2 class="excursion__title"><?php echo $matching_data['title']; ?></h2>
+  <?php }else{?>
+       <h2 class="excursion__title"></h2>
+<?php
+  } ?>                   
 
                         <div class="row align-items-center excursion__info">
-                            <div class="col-xl-5 col-sm-6">
+                            <?php if ($matching_data) {
+                                 echo $matching_data['info']; 
+    }else{?>
+        <div class="col-xl-5 col-sm-6">
                                 <div class="review skeleton-loader"></div>
                             </div>
+ <?php } ?>  
+                           
 
                             
                         </div>
@@ -63,7 +108,9 @@ $path = get_template_directory_uri();
                                 <div class="d-flex align-items-center excursion__info_item skeleton-loader"></div>
                             </div>
                         </div>
-
+<?php if ($matching_data) {?>
+<div class="excursion__description">
+    <?php echo $matching_data['desc'];?> </div><?php }else{ ?>
                         <div class="excursion__description">
                             <svg
                                     role="img"
@@ -136,6 +183,7 @@ $path = get_template_directory_uri();
                                 </defs>
                             </svg>
                         </div>
+                        <?php } ?>
                     </div>
 
                     <div class="excursion__aside">
@@ -193,15 +241,35 @@ $path = get_template_directory_uri();
 
                 </div>
             </div>
+          
         </div>
 
         <!-- Similar events -->
         <div class="block-popular">
             <div class="container">
                 <h2 class="block-popular__title"><?php esc_html_e( 'Similar events', 'viator' ); ?></h2>
-                <div class="new-row"></div>
+<?php
+global $wpdb;
+$table_name = $wpdb->prefix . 'similars';
+global $wp;
+$current_page_urls = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
-                <div class="row"></div>
+
+$matching_data = $wpdb->get_row("SELECT * FROM $table_name WHERE url = '$current_page_urls'", ARRAY_A);
+
+if ($matching_data) {
+    echo '<div class="rowed">';
+    echo $matching_data['html_content'];
+    echo '</div>';
+} else { ?>
+                
+<?php
+    
+   }
+ ?>
+<div class="row"></div>
+
+
             </div>
         </div>
         <!-- Similar events -->
@@ -245,7 +313,6 @@ $path = get_template_directory_uri();
                 </div>
             </div>
         </div>
-        <!-- Subscribe -->
 
         <div class="il-modal" id="modal-booking">
             <div class="il-modal__content" style="text-align: center;">
@@ -254,6 +321,8 @@ $path = get_template_directory_uri();
         </div>
 
     </main>
-
+  <h2 class="newtitle">
+     </h2>
 <?php
 get_footer( 'shop' );
+?>

@@ -479,3 +479,25 @@ add_action('wp',function (){
 
 	//print_r( do_action('woocommerce_order_action_capture_charge', $order));
 });
+
+function newdatatable(){
+    global $wpdb;
+    $table_name = $wpdb->prefix.'cache_single'; // Fixed the variable name
+
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name){ // Added spaces around != for readability
+        $charset_collate = $wpdb->get_charset_collate();
+
+        $sql = "CREATE TABLE $table_name (
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            title VARCHAR(255) NOT NULL,
+            url VARCHAR(255) NOT NULL,
+            media longtext NOT NULL,
+            info longtext NOT NULL,
+            date_added DATE NOT NULL,
+            PRIMARY KEY (id)
+            ) $charset_collate;"; // Added spaces for readability
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql );
+    }
+}
+newdatatable();

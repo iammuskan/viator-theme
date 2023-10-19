@@ -17,9 +17,10 @@
 	get_template_part( '/template-parts/meta' );
 	wp_head();
 	?>
+	
 </head>
 
-<body <?php body_class(); ?>>
+<body data-cmplz=1 <?php body_class(); ?>>
 <?php
 wp_body_open();
 $path             = get_template_directory_uri();
@@ -175,8 +176,3 @@ function show_default_currency( $def_cur, $search_cur ) {
         </nav>
     </div>
 </header>
-
-
-<?php
-
-?>
